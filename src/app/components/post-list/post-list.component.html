@@ -1,0 +1,7 @@
+
+<div *ngIf="posts && posts.length > 0">
+    <app-post-list-single
+            *ngFor="let post of posts"
+            [post]="post">
+    </app-post-list-single>
+</div>
