@@ -24,4 +24,8 @@ export class RestAPIService {
   getPost( post_id ) {
     return this.http.get( this.api_url + 'posts/' + post_id );
   }
+
+  getPage( page_id ) {
+    return this.http.get( this.api_url + 'pages/' + page_id );
+  }
 }

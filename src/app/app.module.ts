@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostListSingleComponent } from './components/post-list-single/post-list-single.component';
 import { PostSingleComponent } from './components/post-single/post-single.component';
+import { PageComponent } from './components/page/page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
     PostListSingleComponent,
-    PostSingleComponent
+    PostSingleComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,
