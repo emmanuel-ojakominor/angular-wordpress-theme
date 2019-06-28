@@ -4,3 +4,15 @@
 * Description: A WordPress Theme Built using Angular
 * Version: 1.0
 */
+
+.main-menu a {
+    text-decoration: none;
+    color: #343A40;
+    background: #F8F9FA;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar-brand {
+    margin-right: 50px;
+}

@@ -1,3 +1,6 @@
-<div *ngIf="post">
-    {{post.title.rendered}}
-</div>
+<h1>
+    <a [routerLink]="['/posts/', post.id]">
+        {{post.title.rendered}}
+    </a>
+</h1>
+<div class="content" [innerHTML]="post.excerpt.rendered"></div>
