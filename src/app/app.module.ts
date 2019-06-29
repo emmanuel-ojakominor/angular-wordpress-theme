@@ -24,8 +24,8 @@ import { PageComponent } from './components/page/page.component';
     HttpClientModule
   ],
   providers: [
-      WindowService,
-      RestAPIService
+    WindowService,
+    RestAPIService
   ],
   bootstrap: [AppComponent]
 })

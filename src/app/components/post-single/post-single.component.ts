@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { RestAPIService } from '../../services/rest-api.service';
 import { ActivatedRoute } from '@angular/router';
@@ -19,9 +20,12 @@ export class PostSingleComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.api.getPost( this.post_id ).subscribe(data => {
-      this.post = data;
+    this.api.getPostBySlug( this.post_id ).subscribe(data => {
+      /**
+       * Because we're only searching by a specific slug for a specific post,
+       * there should only be one post that returns, so grab only the first, i.e., data[0].
+       */
+      this.post = data[0];
     });
   }
-
 }

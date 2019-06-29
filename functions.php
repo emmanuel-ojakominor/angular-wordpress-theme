@@ -1,10 +1,11 @@
 <?php
 
 add_action( 'after_setup_theme', 'awp_theme_setup' );
-add_action('wp_enqueue_scripts', 'awp_theme_styles');
-add_action('wp_enqueue_scripts', 'awp_theme_js');
-add_action('wp_head', 'awp_base_href', 99);
-
+add_action( 'wp_enqueue_scripts', 'awp_theme_styles' );
+add_action( 'wp_enqueue_scripts', 'awp_theme_js' );
+add_action( 'wp_head', 'awp_base_href', 99 );
+add_action( 'init', 'angular_rewrite', 999, 0 );
+add_filter( 'template_redirect', 'angular_remove_redirect', 1, 0);
 
 function awp_theme_setup()
 {
@@ -70,7 +71,17 @@ function get_ang_scripts_loc() {
 }
 
 function awp_base_href() {
-    if(is_front_page()) {
+    if( is_front_page() ) {
         echo '<base href="/">';
+    }
+}
+
+function angular_rewrite() {
+    add_rewrite_rule('posts/([^/]*)/?', 'index.php?pagename=app-page', 'top');
+}
+
+function angular_remove_redirect() {
+    if ( is_front_page() ) {
+        remove_filter( 'template_redirect', 'redirect_canonical' );
     }
 }

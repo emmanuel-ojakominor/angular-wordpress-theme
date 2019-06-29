@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { WindowService} from './window.service';
 import { HttpClient} from '@angular/common/http';
@@ -27,5 +28,9 @@ export class RestAPIService {
 
   getPage( page_id ) {
     return this.http.get( this.api_url + 'pages/' + page_id );
+  }
+
+  getPostBySlug( post_slug ) {
+    return this.http.get( this.api_url + 'posts/?slug=' + post_slug );
   }
 }
